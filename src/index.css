@@ -1,9 +1,9 @@
+/* Dental Clinic Design System - Teal/Cyan + Cream Theme */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Dental Clinic Design System - Teal/Cyan + Cream Theme */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 @layer base {
   :root {
@@ -119,29 +119,29 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading font-semibold tracking-tight text-foreground;
   }
 }
 
 @layer components {
+
   /* Button variants */
   .btn-primary {
-    @apply bg-primary text-primary-foreground hover:bg-primary/90 
-           shadow-md hover:shadow-lg transition-all duration-200
-           focus:ring-2 focus:ring-primary/50 focus:ring-offset-2;
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg transition-all duration-200 focus:ring-2 focus:ring-primary/50 focus:ring-offset-2;
   }
 
   .btn-accent {
-    @apply bg-accent text-accent-foreground hover:bg-accent-hover
-           shadow-md hover:shadow-lg transition-all duration-200
-           focus:ring-2 focus:ring-accent/50 focus:ring-offset-2;
+    @apply bg-accent text-accent-foreground hover:bg-accent-hover shadow-md hover:shadow-lg transition-all duration-200 focus:ring-2 focus:ring-accent/50 focus:ring-offset-2;
   }
 
   .btn-outline {
-    @apply border-2 border-primary text-primary bg-transparent
-           hover:bg-primary hover:text-primary-foreground
-           transition-all duration-200;
+    @apply border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground transition-all duration-200;
   }
 
   /* Card styles */
@@ -168,8 +168,7 @@
 
   /* Trust badge */
   .trust-badge {
-    @apply inline-flex items-center gap-2 px-3 py-1.5 
-           bg-primary-light text-primary rounded-full text-sm font-medium;
+    @apply inline-flex items-center gap-2 px-3 py-1.5 bg-primary-light text-primary rounded-full text-sm font-medium;
   }
 
   /* Star rating */
@@ -184,6 +183,7 @@
 }
 
 @layer utilities {
+
   /* Fade in animation */
   .animate-fade-in {
     animation: fadeIn 0.6s ease-out forwards;
@@ -212,6 +212,7 @@
     from {
       opacity: 0;
     }
+
     to {
       opacity: 1;
     }
@@ -222,6 +223,7 @@
       opacity: 0;
       transform: translateY(20px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -230,23 +232,24 @@
 
   /* Gradient backgrounds */
   .bg-gradient-hero {
-    background: linear-gradient(
-      135deg,
-      hsl(var(--cream)) 0%,
-      hsl(var(--teal-50)) 100%
-    );
+    background: linear-gradient(135deg,
+        hsl(var(--cream)) 0%,
+        hsl(var(--teal-50)) 100%);
   }
 
   .bg-gradient-section {
-    background: linear-gradient(
-      180deg,
-      hsl(var(--background)) 0%,
-      hsl(var(--cream-dark)) 100%
-    );
+    background: linear-gradient(180deg,
+        hsl(var(--background)) 0%,
+        hsl(var(--cream-dark)) 100%);
   }
 
   /* Text gradient */
   .text-gradient-primary {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-glow;
+  }
+
+  /* Safe area for mobile sticky elements */
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 }

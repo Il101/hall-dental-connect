@@ -15,7 +15,7 @@ export const clinic = {
     country: "Austria",
   },
   mapLink: "https://maps.google.com/?q=Hall+in+Tirol+Austria",
-  
+
   hours: [
     { day: "Monday", time: "08:00 – 18:00" },
     { day: "Tuesday", time: "08:00 – 18:00" },
@@ -260,11 +260,11 @@ export const form = {
     linkText: "See Privacy Policy",
     linkHref: "/privacy",
   },
-  submit: "Send Request",
+  submit: "Book an appointment",
   submitting: "Sending...",
   success: {
     title: "Request Sent!",
-    message: "Thank you for your appointment request. We'll contact you within business hours to confirm.",
+    message: "Request received — we will confirm within business hours.",
   },
   error: {
     title: "Something went wrong",

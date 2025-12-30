@@ -26,18 +26,20 @@ interface ServicesProps {
 export function Services({ onServiceSelect }: ServicesProps) {
   const handleAskAbout = (serviceId: string) => {
     trackServiceAsk(serviceId);
-    
+
     // Scroll to form and preselect service
     const form = document.getElementById("appointment-form");
     if (form) {
       form.scrollIntoView({ behavior: "smooth" });
     }
-    
+
     // Call the parent handler to preselect the service
     if (onServiceSelect) {
       // Small delay to allow scroll to complete
       setTimeout(() => {
         onServiceSelect(serviceId);
+        // Dispatch custom event to trigger highlight on service dropdown
+        window.dispatchEvent(new CustomEvent("highlightServiceDropdown"));
       }, 500);
     }
   };

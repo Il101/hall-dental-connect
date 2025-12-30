@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -26,11 +26,22 @@ export function AppointmentForm({ preselectedService }: AppointmentFormProps) {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [highlightService, setHighlightService] = useState(false);
 
   // Update service when preselectedService changes
   if (preselectedService && preselectedService !== formData.service && status === "idle") {
     setFormData(prev => ({ ...prev, service: preselectedService }));
   }
+
+  // Listen for highlight event from Services component
+  useEffect(() => {
+    const handleHighlight = () => {
+      setHighlightService(true);
+      setTimeout(() => setHighlightService(false), 1500);
+    };
+    window.addEventListener("highlightServiceDropdown", handleHighlight);
+    return () => window.removeEventListener("highlightServiceDropdown", handleHighlight);
+  }, []);
 
   const validate = () => {
     const newErrors: Record<string, string> = {};
@@ -97,7 +108,11 @@ export function AppointmentForm({ preselectedService }: AppointmentFormProps) {
             <div>
               <Label htmlFor="service">{formContent.fields.service.label} *</Label>
               <Select value={formData.service} onValueChange={v => setFormData(p => ({ ...p, service: v }))}>
-                <SelectTrigger className={errors.service ? "border-destructive" : ""}><SelectValue placeholder={formContent.fields.service.placeholder} /></SelectTrigger>
+                <SelectTrigger
+                  className={`transition-all duration-300 ${errors.service ? "border-destructive" : ""} ${highlightService ? "ring-2 ring-primary ring-offset-2 bg-primary/5" : ""}`}
+                >
+                  <SelectValue placeholder={formContent.fields.service.placeholder} />
+                </SelectTrigger>
                 <SelectContent className="bg-popover z-50">
                   {services.map(s => <SelectItem key={s.id} value={s.id}>{s.title}</SelectItem>)}
                 </SelectContent>

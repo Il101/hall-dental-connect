@@ -11,6 +11,7 @@ import { Location } from "@/components/Location";
 import { AppointmentForm } from "@/components/AppointmentForm";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
+import { MobileStickyBar } from "@/components/MobileStickyBar";
 import { clinic } from "@/content";
 
 const Index = () => {
@@ -22,7 +23,7 @@ const Index = () => {
         <title>Dentist in Hall in Tirol | {clinic.name}</title>
         <meta name="description" content="Modern dental care in Hall in Tirol, Austria. Transparent treatment plans, gentle approach, easy online booking. Book your appointment today!" />
       </head>
-      <div className="min-h-screen">
+      <div className="min-h-screen pb-20 md:pb-0">
         <Header />
         <main>
           <Hero />
@@ -37,18 +38,22 @@ const Index = () => {
           <FinalCTA />
         </main>
         <Footer />
+        <MobileStickyBar />
       </div>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Dentist",
-        "name": clinic.name,
-        "address": { "@type": "PostalAddress", "streetAddress": clinic.address.street, "addressLocality": clinic.address.city, "postalCode": clinic.address.zip, "addressCountry": "AT" },
-        "telephone": clinic.phone,
-        "email": clinic.email,
-        "openingHours": ["Mo-Th 08:00-18:00", "Fr 08:00-14:00"]
-      })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Dentist",
+          "name": clinic.name,
+          "address": { "@type": "PostalAddress", "streetAddress": clinic.address.street, "addressLocality": clinic.address.city, "postalCode": clinic.address.zip, "addressCountry": "AT" },
+          "telephone": clinic.phone,
+          "email": clinic.email,
+          "openingHours": ["Mo-Th 08:00-18:00", "Fr 08:00-14:00"]
+        })
+      }} />
     </>
   );
 };
 
 export default Index;
+

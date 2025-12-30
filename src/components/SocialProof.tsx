@@ -1,4 +1,4 @@
-import { Star } from "lucide-react";
+import { Star, BadgeCheck, ExternalLink } from "lucide-react";
 import { reviews } from "@/content";
 
 export function SocialProof() {
@@ -9,9 +9,13 @@ export function SocialProof() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             What Our Patients Say
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-4">
             Real feedback from our valued patients
           </p>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">
+            <BadgeCheck className="w-4 h-4" />
+            Verified reviews
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -49,10 +53,21 @@ export function SocialProof() {
           ))}
         </div>
 
-        <p className="text-center text-sm text-muted-foreground mt-8">
-          Results and experiences may vary.
-        </p>
+        <div className="text-center mt-8 space-y-3">
+          <a
+            href="#"
+            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors"
+            onClick={(e) => e.preventDefault()}
+          >
+            See more reviews
+            <ExternalLink className="w-4 h-4" />
+          </a>
+          <p className="text-sm text-muted-foreground">
+            Results and experiences may vary.
+          </p>
+        </div>
       </div>
     </section>
   );
 }
+
