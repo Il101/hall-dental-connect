@@ -1,7 +1,7 @@
 import { Star, BadgeCheck, ExternalLink } from "lucide-react";
 import { reviews } from "@/content";
 
-export function SocialProof() {
+export function Testimonials() {
   return (
     <section className="section-padding bg-background">
       <div className="container-wide">

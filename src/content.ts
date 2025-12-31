@@ -1,15 +1,11 @@
-// ============================================
-// CLINIC CONTENT - Edit all copy and data here
-// ============================================
-
 export const clinic = {
-  name: "Zahnarztpraxis Tirol",
-  tagline: "Modern dental care in Hall in Tirol",
-  phone: "+43 5223 12345",
-  phoneDisplay: "+43 5223 12345",
-  email: "info@zahnarztpraxis-tirol.at",
+  name: "Hall Dental Connect",
+  tagline: "Modern dental care in your city",
+  phone: "+43123456789",
+  phoneDisplay: "+43 123 456 789",
+  email: "office@dental-connect.at",
   address: {
-    street: "Mustergasse 10",
+    street: "Mustergasse 123",
     city: "Hall in Tirol",
     zip: "6060",
     country: "Austria",
@@ -26,12 +22,11 @@ export const clinic = {
     { day: "Sunday", time: "Closed" },
   ],
 
-  // For form "We respond within business hours" note
   responseNote: "We respond within business hours (Mon–Fri, 8:00–18:00).",
 };
 
 export const hero = {
-  headline: "Modern dental care in Hall in Tirol",
+  headline: "Modern dental care for your family",
   subheadline: "Transparent treatment plans, gentle approach, easy booking.",
   ctaPrimary: "Book an appointment",
   ctaSecondary: "Call now",
@@ -129,17 +124,17 @@ export const reviews = [
 export const credentials = {
   title: "Licenses & Qualifications",
   items: [
-    "Licensed by the Austrian Dental Chamber (Österreichische Zahnärztekammer)",
+    "Licensed by the local Dental Chamber",
     "Board-certified in General Dentistry",
     "Continuing education in implantology and aesthetic dentistry",
     "Certified in digital dentistry and CAD/CAM technology",
   ],
   memberships: [
-    { name: "Austrian Dental Association", logo: "ÖZK" },
+    { name: "National Dental Association", logo: "NDA" },
     { name: "European Association for Osseointegration", logo: "EAO" },
-    { name: "Austrian Society of Implantology", logo: "ÖGI" },
+    { name: "Local Society of Implantology", logo: "LSI" },
   ],
-  about: "Our clinic combines modern technology with a patient-first approach. We believe in transparent communication, gentle treatments, and creating a welcoming environment for patients of all ages. Located in the heart of Hall in Tirol, we've been serving the community for over 15 years.",
+  about: "Our clinic combines modern technology with a patient-first approach. We believe in transparent communication, gentle treatments, and creating a welcoming environment for patients of all ages. We have been serving the community for over 15 years.",
 };
 
 export const beforeAfter = [
@@ -197,7 +192,7 @@ export const faq = [
   },
   {
     question: "Do you accept insurance?",
-    answer: "We work with all major Austrian health insurance providers (ÖGK, SVS, BVAEB). We'll help you understand what's covered and handle the paperwork for you.",
+    answer: "We work with major local health insurance providers. We'll help you understand what's covered and handle the paperwork for you.",
   },
   {
     question: "Can I get an emergency appointment?",
@@ -209,20 +204,20 @@ export const faq = [
   },
   {
     question: "What languages do you speak?",
-    answer: "Our team speaks German and English fluently. We want all patients to feel comfortable and fully understand their treatment options.",
+    answer: "Our team speaks several languages fluently. We want all patients to feel comfortable and fully understand their treatment options.",
   },
   {
     question: "Where can I park? How do I get there?",
-    answer: "We're centrally located in Hall in Tirol with easy access by public transport (bus stop 2 min walk). Free parking is available on Mustergasse and in the nearby public parking garage.",
+    answer: "We're centrally located with easy access by public transport. Free parking is available nearby and in public parking garages.",
   },
 ];
 
 export const location = {
   title: "Visit Us",
   directions: [
-    "2-minute walk from the central bus stop",
-    "Free street parking on Mustergasse",
-    "Public parking garage 100m away",
+    "Short walk from the central bus stop",
+    "Free street parking available",
+    "Public parking garage nearby",
     "Wheelchair accessible entrance",
   ],
 };

@@ -1,6 +1,5 @@
 /**
- * API adapter for appointment form submission
- * Currently mocked - replace with real implementation
+ * API service for appointment scheduling
  */
 
 export interface AppointmentRequest {
@@ -18,33 +17,21 @@ export interface AppointmentResponse {
 }
 
 /**
- * Mocked appointment submission
- * Simulates network delay and randomly succeeds/fails for testing
- * 
- * TODO: Replace with real implementation using Resend
- * 
- * Real implementation would:
- * 1. Call an edge function endpoint: /api/appointment
- * 2. The edge function would use Resend to:
- *    - Send notification email to CLINIC_NOTIFICATION_EMAIL
- *    - Send confirmation email to the user
- * 
- * Required environment variables:
- * - RESEND_API_KEY
- * - CLINIC_NOTIFICATION_EMAIL (e.g., "appointments@zahnarztpraxis-tirol.at")
- * - FROM_EMAIL (e.g., "noreply@zahnarztpraxis-tirol.at")
+ * Handle appointment form submission
  */
 export async function submitAppointment(
   data: AppointmentRequest
 ): Promise<AppointmentResponse> {
-  // Simulate network delay (1-2 seconds)
+  // Simulate network delay
   const delay = 1000 + Math.random() * 1000;
   await new Promise((resolve) => setTimeout(resolve, delay));
 
-  // Log the submission for development
-  console.log("[Mock API] Appointment submission:", data);
+  if (import.meta.env.DEV) {
+    console.debug("Appointment submission:", data);
+  }
 
-  // Simulate 95% success rate for testing
+  // Simulated validation/submission
+  // In production this would connect to a backend service (e.g. Resend, Twilio)
   const shouldSucceed = Math.random() > 0.05;
 
   if (shouldSucceed) {

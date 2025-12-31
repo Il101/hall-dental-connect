@@ -2,7 +2,7 @@ import { finalCta } from "@/content";
 import { Button } from "@/components/ui/button";
 import { trackCtaClick } from "@/lib/analytics";
 
-export function FinalCTA() {
+export function AppointmentCTA() {
   const scrollToForm = () => {
     trackCtaClick("final-cta", finalCta.buttonText);
     document.getElementById("appointment-form")?.scrollIntoView({ behavior: "smooth" });

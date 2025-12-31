@@ -1,6 +1,5 @@
 /**
- * Simple analytics tracking utility
- * Replace the implementation with your analytics provider (GA, Plausible, etc.)
+ * Analytics tracking utilities
  */
 
 type EventName =
@@ -18,22 +17,14 @@ interface EventProps {
 
 /**
  * Track an analytics event
- * Currently logs to console - replace with your analytics provider
  */
 export function track(eventName: EventName, props?: EventProps): void {
   // Log to console for development
-  console.log(`[Analytics] ${eventName}`, props || {});
+  if (import.meta.env.DEV) {
+    console.log(`[Analytics] ${eventName}`, props || {});
+  }
 
-  // TODO: Replace with your analytics provider
-  // Example for Google Analytics 4:
-  // if (typeof window !== 'undefined' && window.gtag) {
-  //   window.gtag('event', eventName, props);
-  // }
-
-  // Example for Plausible:
-  // if (typeof window !== 'undefined' && window.plausible) {
-  //   window.plausible(eventName, { props });
-  // }
+  // Integrations can be added here (GA, Plausible, etc.)
 }
 
 /**

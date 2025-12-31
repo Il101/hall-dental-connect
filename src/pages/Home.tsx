@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { SocialProof } from "@/components/SocialProof";
+import { Testimonials } from "@/components/Testimonials";
 import { TrustBadges } from "@/components/TrustBadges";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import { Services } from "@/components/Services";
@@ -9,25 +9,25 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { FAQ } from "@/components/FAQ";
 import { Location } from "@/components/Location";
 import { AppointmentForm } from "@/components/AppointmentForm";
-import { FinalCTA } from "@/components/FinalCTA";
+import { AppointmentCTA } from "@/components/AppointmentCTA";
 import { Footer } from "@/components/Footer";
 import { MobileStickyBar } from "@/components/MobileStickyBar";
 import { clinic } from "@/content";
 
-const Index = () => {
+const Home = () => {
   const [selectedService, setSelectedService] = useState<string | undefined>();
 
   return (
     <>
       <head>
-        <title>Dentist in Hall in Tirol | {clinic.name}</title>
-        <meta name="description" content="Modern dental care in Hall in Tirol, Austria. Transparent treatment plans, gentle approach, easy online booking. Book your appointment today!" />
+        <title>Modern Dental Clinic | {clinic.name}</title>
+        <meta name="description" content="Modern dental care in your city. Transparent treatment plans, gentle approach, easy online booking. Book your appointment today!" />
       </head>
       <div className="min-h-screen pb-20 md:pb-0">
         <Header />
         <main>
           <Hero />
-          <SocialProof />
+          <Testimonials />
           <TrustBadges />
           <BeforeAfter />
           <Services onServiceSelect={setSelectedService} />
@@ -35,7 +35,7 @@ const Index = () => {
           <AppointmentForm preselectedService={selectedService} />
           <FAQ />
           <Location />
-          <FinalCTA />
+          <AppointmentCTA />
         </main>
         <Footer />
         <MobileStickyBar />
@@ -55,5 +55,5 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Home;
 
