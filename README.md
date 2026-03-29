@@ -1,54 +1,40 @@
-# Zahnarztpraxis Tirol - Dental Clinic Website
+# Hall Dental Connect
 
-A modern dental clinic landing page for Zahnarztpraxis Tirol, built with React and Vite.
+Modern responsive landing website for a dental clinic in Tirol, built with React + Vite.
 
 ## Features
 
-- Modern, responsive design
-- Appointment booking form
-- Service showcase
-- Before/After treatment gallery
-- Patient reviews
-- FAQ section
-- Location and contact information
-- Mobile-friendly with sticky action bar
+- Responsive marketing website
+- Service blocks and treatment highlights
+- Before/after gallery section
+- FAQ and contact sections
+- Appointment/lead form UI
+- Mobile sticky action bar
 
-## Getting Started
+## Tech Stack
 
-### Prerequisites
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui
 
-Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Quick Start
 
-### Installation
-
-```sh
-# Clone the repository
-git clone <YOUR_GIT_URL>
-
-# Navigate to the project directory
+```bash
+git clone https://github.com/Il101/hall-dental-connect.git
 cd hall-dental-connect
-
-# Install dependencies
 npm install
-
-# Start the development server
 npm run dev
 ```
 
-## Technologies Used
+## Build
 
-- **Vite** - Build tool
-- **TypeScript** - Type safety
-- **React** - UI framework
-- **shadcn/ui** - UI components
-- **Tailwind CSS** - Styling
-
-## Build for Production
-
-```sh
+```bash
 npm run build
+npm run preview
 ```
 
-## Deployment
+## Notes
 
-Build the project and deploy the `dist` folder to your hosting provider.
+This repository contains the frontend application source. Deploy `dist/` to static hosting.
